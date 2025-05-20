@@ -11,9 +11,9 @@ class MailController extends Controller
     public function __invoke(Request $request)
     {
         if($this->sendMail($request)) {
-            return back()->with('message', 'Thank you for your message');
+            return back()->with('success', 'Thank you for your message');
         } else {
-            return back()->with('message', 'Unable to send email at this time. Please try again later');
+            return back()->with('failed', 'Unable to send email at this time. Please try again later');
         }
     }
 

@@ -20,7 +20,7 @@
                 @isset($featured)
                     <div class="card mb-4">
                         @if($featured->image)
-                            <a href="{{ route('post', $featured->id) }}"><img class="card-img-top" src="{{ asset('images/' . $featured->image) }}" alt="{{ $featured->image }}" /></a>
+                            <a href="{{ route('post', $featured->id) }}"><img class="card-img-top" src="{{ asset('storage/images/' . $featured->image) }}" alt="{{ $featured->image }}" /></a>
                         @endif
                         <div class="card-body">
                             <div class="small text-muted">{{ $featured->created_at->format('j M Y') }}</div>
@@ -41,7 +41,7 @@
                             <div class="col-lg-6">
                                 <div class="card mb-4">
                                     @if($post->image)
-                                        <a href="{{ route('post', $post) }}"><img class="card-img-top" src="{{ asset('images/' . $post->image) }}" alt="{{ $post->image }}" /></a>
+                                        <a href="{{ route('post', $post) }}"><img class="card-img-top" src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->image }}" /></a>
                                     @endif
                                     <div class="card-body">
                                         <div class="small text-muted">{{ $post->created_at->format('j M Y') }}</div>
@@ -65,7 +65,7 @@
                             <div class="col-lg-6">
                                 <div class="card mb-4">
                                     @if($result->image)
-                                        <a href="{{ route('post', $result) }}"><img class="card-img-top" src="{{ asset('images/' . $result->image) }}" alt="{{ $result->image }}" /></a>
+                                        <a href="{{ route('post', $result) }}"><img class="card-img-top" src="{{ asset('storage/images/' . $result->image) }}" alt="{{ $result->image }}" /></a>
                                     @endif
                                     <div class="card-body">
                                         <div class="small text-muted">{{ $result->created_at->format('j M Y') }}</div>

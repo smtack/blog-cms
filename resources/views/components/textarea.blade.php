@@ -1,1 +1,1 @@
-<textarea {!! $attributes->merge(['class' => 'w-full h-40 mt-1 block border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>{{ $slot }}</textarea>
+<textarea {!! $attributes->merge(['class' => 'w-full h-100 mt-1 p-2 block border border-gray-300 outline-none focus:ring focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-xs']) !!}>{{ $slot }}</textarea>

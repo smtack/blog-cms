@@ -42,7 +42,7 @@ class PostController extends Controller
         if ($request->image) {
             $file_name = time() . '.' . $request->image->extension();
 
-            $request->image->move(public_path('images'), $file_name);
+            $request->image->move(public_path('storage/images'), $file_name);
 
             $validated['image'] = $file_name;
         }
@@ -88,8 +88,8 @@ class PostController extends Controller
 
         if ($request->image) {
             if($post->image) {
-                $file_path = "images/{$post->image}";
-    
+                $file_path = "storage/images/{$post->image}";
+
                 if(File::exists($file_path)) {
                     File::delete($file_path);
                 }
@@ -97,7 +97,7 @@ class PostController extends Controller
 
             $file_name = time() . '.' . $request->image->extension();
 
-            $request->image->move(public_path('images'), $file_name);
+            $request->image->move(public_path('storage/images'), $file_name);
 
             $validated['image'] = $file_name;
         }
@@ -115,13 +115,13 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         if($post->image) {
-            $file_path = "images/{$post->image}";
+            $file_path = "storage/images/{$post->image}";
 
             if(File::exists($file_path)) {
                 File::delete($file_path);
             }
         }
-        
+
         $post->delete();
 
         return redirect()->route('admin');

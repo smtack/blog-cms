@@ -7,8 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="bg-white overflow-hidden shadow-xs sm:rounded-lg">
+                <div class="p-6 text-gray-900 space-x-1">
                     <a href="{{ route('posts.create') }}"><x-primary-button>{{ __('New Post') }}</x-primary-button></a>
                     <a href="{{ route('categories.index') }}"><x-primary-button>{{ __('Manage Categories') }}</x-primary-button></a>
                 </div>
@@ -18,7 +18,7 @@
 
     <div class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-xs sm:rounded-lg">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -53,9 +53,9 @@
                                         <form action="{{ route('posts.feature', $post->id) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
-                                            
+
                                             @if($post->is_featured)
-                                                <input class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" type="checkbox" name="feature" onChange="this.form.submit()" checked>
+                                                <input class="w-4 h-4 text-indigo-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-indigo-500" type="checkbox" name="feature" onChange="this.form.submit()" checked>
                                             @else
                                                 <input class="rounded-md" type="checkbox" name="unfeature" onChange="this.form.submit()">
                                             @endif
@@ -68,7 +68,7 @@
                                         <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-            
+
                                             <x-primary-button>{{ __('Delete') }}</x-primary-button>
                                         </form>
                                     </td>

@@ -12,16 +12,24 @@
 
 <div class="container mb-4">
     <div class="row">
-        @if(Session::has('message'))
-            <p class="text-primary">{{ Session::get('message') }}</p>
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+
+        @if(Session::has('failed'))
+            <div class="alert alert-danger" role="alert">
+                {{ Session::get('failed') }}
+            </div>
         @endif
 
         @if ($errors->any())
-            <ul class="list-unstyled">
-                @foreach ($errors->all() as $error)
-                    <li class="text-danger">{{ $error }}</li>
-                @endforeach
-            </ul>
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+            @endforeach
         @endif
 
         <div class="col-lg-12">

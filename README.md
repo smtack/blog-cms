@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Blog CMS
 
 <p align="center">
     <img src="screenshots/blog1.png" alt="Homepage">
@@ -16,7 +16,12 @@ A simple CMS for a personal blog. Blog features include search, categories and a
 
 ## Installation
 
-Run [php artisan migrate --seed] to migrate and create the admin user.
+1. Run `composer install`
+2. Run `npm install`
+3. Copy `.env.example`, rename to `.env`, and run `php artisan key:generate`
+4. Run `php artisan migrate --seed` to migrate and create the admin user.
+5. Create `images` folder in `storage/app/public` then run `php artisan storage:link` to create folder for image uploads.
+6. Run `npm run dev` or `npm run build`
 
 
 ## License
