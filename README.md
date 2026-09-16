@@ -17,13 +17,12 @@ A simple CMS for a personal blog. Blog features include search, categories and a
 ## Installation
 
 1. Run `git clone https://github.com/smtack/blog-cms.git` then `cd blog-cms`
-2. Run `composer install` then `npm install`
-3. Run `cp .env.example .env` and update for your database, then `php artisan key:generate`
-4. Run `php artisan migrate --seed` to migrate and create the admin user.
-5. Create `images` folder in `storage/app/public` then run `php artisan storage:link` to create folder for image uploads.
-6. Run `composer run dev` to start the development server
+2. Run `composer run setup`
+3. Run `php artisan db:seed` to create the admin user.
+4. Create `images` folder in `storage/app/public` then run `php artisan storage:link` to create folder for image uploads.
+5. Run `composer run dev` to start the development server.
 
-The email for the default admin user is `admin@example.com` and the password is `password`. Change these in the Admin settings.
+The email for the default admin user is `admin@example.com` and the password is `admin123`. Change these in the Admin settings.
 
 ## License
 

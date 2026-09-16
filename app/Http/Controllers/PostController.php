@@ -36,7 +36,7 @@ class PostController extends Controller
             'title' => 'required|min:2',
             'content' => 'required',
             'category_id' => 'required',
-            'image' => 'image|mimes:jpeg,jpg,png,webm|max:2048'
+            'image' => 'image|mimes:jpeg,jpg,png,webp|max:2048'
         ]);
 
         if ($request->image) {
@@ -83,7 +83,7 @@ class PostController extends Controller
             'title' => 'required|min:2',
             'content' => 'required',
             'category_id' => 'required',
-            'image' => 'image|mimes:jpeg,jpg,png,webm|max:2048'
+            'image' => 'image|mimes:jpeg,jpg,png,webp|max:2048'
         ]);
 
         if ($request->image) {
